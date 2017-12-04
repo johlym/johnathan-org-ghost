@@ -1,0 +1,13 @@
+// bower:scss
+@import "app/bower_components/normalize-scss/_normalize.scss";
+// endbower
+
+// Bourbon Neat - http://neat.bourbon.io/
+@import "neat";
+
+// layout based on https://smacss.com
+@import "base/_colors.scss";
+
+@import "layout/_header.scss";
+@import "layout/_main.scss";
+@import "layout/_footer.scss";

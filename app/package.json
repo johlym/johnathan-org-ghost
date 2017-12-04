@@ -1,0 +1,24 @@
+{
+  "name": "johnathan-org-theme",
+  "description": "A ghost theme for johnathan.org",
+  "version": "1.0.0",
+  "homepage": "https://john.ly",
+  "author": {
+      "name": "Johnathan Lyman",
+      "email": "jelyman@gmail.com",
+      "url": "https://john.ly"
+  },
+  "config": {
+      "posts_per_page": 5
+  },
+  "engines": {
+      "ghost": "^1.0.0"
+  },
+  "gpm": {
+      "type": "theme",
+      "categories": [
+          "Minimal",
+          "Personal Blogs"
+      ]
+  }
+}

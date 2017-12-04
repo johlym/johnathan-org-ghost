@@ -1,0 +1,20 @@
+main {  
+  @include outer-container;
+
+  > section {
+    @include span-columns(12);
+    @include pad;
+  }
+
+  > article {
+    @include span-columns(12);
+    @include pad;
+  }
+}
+
+.post-template {
+
+  main {
+    margin-top: 4rem;
+  }
+}
