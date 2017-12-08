@@ -1,3 +1,4 @@
 .DS_Store
 dist/*
 app/assets/css/*
+node_modules/
