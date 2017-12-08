@@ -1,6 +1,6 @@
 <!doctype html>  
 <head>  
-  <title>{{meta_title}}</title>
+  <title>{{meta_title}} - a test blog!</title>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
@@ -10,13 +10,39 @@
   <link rel="stylesheet" href="/bower_components/highlightjs/styles/default.css" />
   <!-- endbower -->
 
-  <link rel="stylesheet" href="/assets/css/screen.css" /> 
+  <link rel="stylesheet" href="{{asset "css/screen.css"}}" /> 
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
+
+  <script defer src="{{asset "js/fa/fa-regular.min.js"}}"></script>
+  <script defer src="{{asset "js/fa/fa-brands.min.js"}}"></script>
+  <script src="{{asset "js/fa/fontawesome.min.js"}}"></script>
 
   {{ghost_head}}
 </head>  
 <body class="{{body_class}}">  
   <div class="container">
-    {{{body}}}
+    <div class="left"> 
+      <div class="title-box left-flex-child">
+        <h1>Johnathan Lyman</h1>
+        <span class="intro">
+          I'm a developer, tinkerer, and blogger from Seattle. 
+        </span>
+      </div>
+      <div class="menu left-flex-child">
+        {{{navigation}}}
+      </div>
+      <div class="menu left-flex-child">
+        <ul class="navigation">
+          <li class="link"><a href="#">subilnk</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="right">
+      <div class="right-wrapper">
+        {{{body}}}
+      </div>
+    </div>
   </div>
 
   <!-- bower:js -->
