@@ -6,8 +6,13 @@
 @import "neat";
 
 // layout based on https://smacss.com
-@import "base/_colors.scss";
+@import "base/colors";
+@import "base/fonts";
 
-@import "layout/_header.scss";
-@import "layout/_main.scss";
-@import "layout/_footer.scss";
+@import "layout/header";
+@import "layout/main";
+@import "layout/footer";
+
+// Modules
+
+@import "module/fontawesome";
