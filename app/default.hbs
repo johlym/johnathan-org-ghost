@@ -1,41 +1,69 @@
 <!doctype html>  
 <head>  
-  <title>{{meta_title}} - a test blog!</title>
+  <title>{{meta_title}}</title>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
-  <!-- bower:css -->
-  <link rel="stylesheet" href="/bower_components/highlightjs/styles/default.css" />
-  <!-- endbower -->
+  <meta name="viewport" content="initial-scale=1, viewport-fit=cover">
 
   <link rel="stylesheet" href="{{asset "css/screen.css"}}" /> 
 
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700,700i" rel="stylesheet">
 
-  <script defer src="{{asset "js/fa/fa-regular.min.js"}}"></script>
-  <script defer src="{{asset "js/fa/fa-brands.min.js"}}"></script>
-  <script src="{{asset "js/fa/fontawesome.min.js"}}"></script>
+  <link rel="stylesheet" href="{{asset "css/fontawesome.min.css"}}" />
+  <link rel="stylesheet" href="{{asset "css/fa-brands.min.css"}}" />
+  <link rel="stylesheet" href="{{asset "css/fa-regular.min.css"}}" />
 
   {{ghost_head}}
 </head>  
-<body class="{{body_class}}">  
+<body class="{{body_class}}">
+  <div class="mobile-header">
+    <div class="mobile-title">{{@blog.title}}</div>
+    <div class="mobile-menu">
+      {{{navigation}}}
+    </div>  
+  </div>
   <div class="container">
     <div class="left"> 
       <div class="title-box left-flex-child">
-        <h1>Johnathan Lyman</h1>
+        <h1>{{@blog.title}}</h1>
         <span class="intro">
-          I'm a developer, tinkerer, and blogger from Seattle. 
+          I am an engineer at <a href="//papertrail.com">Papertrail</a>, 
+          a huge Apple nerd and aemi-regular blogger.
+          <a href="/about">Find out more</a>.
         </span>
       </div>
-      <div class="menu left-flex-child">
+      <div class="widget left-flex-child column-menu">
+        <h3>Links</h3>
         {{{navigation}}}
       </div>
-      <div class="menu left-flex-child">
-        <ul class="navigation">
-          <li class="link"><a href="#">subilnk</a></li>
+      <div class="widget left-flex-child">
+        <h3>Side Projects</h3>
+        Check out my <a href="//micro.johnathan.org">micro blog</a> for a look at some of the half-formed thoughts that spill out.
+      </div>
+      <div class="widget left-flex-child">
+        You can find some of my past projects in the <a href="/archives">Archives.</a>
+        <br /><br />
+        The development of this blog layout is (loosely) tracked <a href="https://github.com/johlym/johnathan-org">here</a>.
+      </div>
+      <div class="widget left-flex-child">
+        <h3>Meta &amp; Copyright</h3>
+        <a href="//johnathan.org">johnathan.org</a> and its content are <i class="far fa-copyright"></i> 2014&mdash;{{date format="YYYY"}}. All rights reserved. Trademarks are property of their respective owners.
+      </div>
+      <div class="widget left-flex-child">
+        <h3>Powered by:</h3>
+        <ul class="meta-pills">
+          <li><a href="https://link.johnathan.org/ghostblog"><img src="https://img.shields.io/badge/blog-Ghost-lightgrey.svg" /></a></li>
+          <li><a href="https://link.johnathan.org/linode"><img src="https://img.shields.io/badge/hosting-Linode-brightgreen.svg" /></a></li>
+          <li><a href="https://link.johnathan.org/dnsimple"><img src="https://img.shields.io/badge/dns-DNSimple-blue.svg" /></a></li>
+          <li><a href="https://link.johnathan.org/letsencrypt"><img src="https://img.shields.io/badge/ssl-Let's Encrypt-yellow.svg" /></a></li>
         </ul>
+      </div>
+      <div class="widget left-flex-child">
+        Uptime: <span class="uptime-number"><i class="far fa-spinner fa-pulse"></i></span> (<a href="//status.johnathan.org">see stats</a>)</a>
+      </div>
+      <div class="widget left-flex-child">
+        <span id="sidebar-quote"></span>
       </div>
     </div>
     <div class="right">
@@ -45,10 +73,47 @@
     </div>
   </div>
 
-  <!-- bower:js -->
-  <script src="/bower_components/highlightjs/highlight.pack.js"></script>
-  <!-- endbower -->
-
   {{ghost_foot}}
+
+  <script>
+    var paginationLines = [
+    'The end may have come for this page, but the next one is sure to delight!',
+    'What are your thoughts on the next page?',
+    'If you thought those posts were great, try these!',
+    'The next page is where the wild things are... and the next set of posts.'
+    ];
+    var sidebarQuotes = [
+    "It's everything your mother warned you about.",
+    "Brought to you by a sneeze and a fart.",
+    "Powered by the souls of undocumented codes.",
+    "Make the independent web great again.",
+    "No Ragrets.",
+    "These violent delights have violent ends and in their triumph die."
+    ];
+    var randomPaginationLines = Math.floor(Math.random()*paginationLines.length);
+    var randomPaginationLines = Math.floor(Math.random()*sidebarQuotes.length);
+
+    document.getElementById('hey-look').innerHTML = paginationLines[randomPaginationLines];
+    document.getElementById('sidebar-quote').innerHTML = sidebarQuotes[randomPaginationLines];
+
+    var uptimeField = document.querySelector(".uptime-number"),
+    checkAndDisplayUptime = function() {
+      var e = new XMLHttpRequest;
+      e.open("get", "https://updown.io/api/checks?api-key=ro-aNa87VGVKAjK8d9qa8Dk", !0), e.responseType = "json", e.onload = function() {
+        if (200 === e.status) {
+          var a = e.response;
+          if (null !== a[0].uptime) {
+            uptimeField.innerHTML = a[0].uptime + "%"
+          }
+          else {
+            uptimeField.innerHTML = "unknown %";
+          }
+        }
+      }, e.send()
+    };
+null !== uptimeField && setTimeout(function() {
+  checkAndDisplayUptime()
+}, 5e3);
+  </script>
 </body>  
 </html>  

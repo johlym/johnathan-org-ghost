@@ -1,8 +1,16 @@
 {{#foreach posts}}
 {{^has tag="micro"}}
-<h1>{{title}}</h1>
-{{content}}
+<article>
+  {{#if feature_image}}
+  <div class="post-image"><img src="{{img_url feature_image}}" alt="{{title}}"></div>
+  {{/if}}
+  <h1><a href="">{{title}}</a></h1>
+  <time><i class="far fa-calendar-alt"></i> {{date published_at format="MMMM DD, YYYY"}} ({{date published_at timeago="true"}})<br/> <i class="far fa-stopwatch"></i> {{reading_time}}</time>
+  <div class="content">
+    {{content}}
+  </div>
+</article>
+<hr />
 {{/has}}
 {{/foreach}}
-
-{{pagination}}
+  {{pagination}}

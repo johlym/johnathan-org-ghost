@@ -1,0 +1,20 @@
+{{#if next}}
+<div class="hey-look" id="hey-look">For some reason the robots couldn't think of anything crafty to say here.</div>
+{{else}}
+<div class="hey-look hidden" id="hey-look"></div>
+{{/if}}
+<div class="pagination">
+  <div class="later">
+    {{#if prev}}
+    <a href="{{page_url prev}}"><i class="far fa-angle-double-left"></i> Previous</a>
+    {{/if}}
+  </div>
+  <div class="count">
+    Page {{page}} of {{pages}}
+  </div>
+  <div class="earlier">
+    {{#if next}}
+    <a href="{{page_url next}}">Next <i class="far fa-angle-double-right"></i></a>
+    {{/if}}
+  </div>
+</div>
