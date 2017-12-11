@@ -1,0 +1,15 @@
+{{!< default}}
+
+{{#post}}
+<article class="h-entry {{post_class}} h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  {{#if feature_image}}
+  <div class="post-image"><img src="{{img_url feature_image}}" alt="{{title}}"></div>
+  {{/if}}
+  <h1 class="p-name" itemprop="headline"><a href="{{url}}">{{title}}</a></h1>
+  <div class="e-content">
+    {{content}}
+  </div>
+</article>
+<br /><br />
+
+{{/post}}
