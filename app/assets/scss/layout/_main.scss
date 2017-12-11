@@ -42,6 +42,11 @@ body {
   background: none !important;
 }
 
+.bar {
+  border-top: 4px solid #9E2A2B;
+  height:1px;
+}
+
 .container {
   width: 100%;
   margin: 0 auto;
@@ -51,7 +56,16 @@ body {
   justify-content: center;
   align-content: center;
   align-items: flex-start;
-  border-top: 4px solid #9E2A2B;
+  .site-title {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1024px;
+    width: 100%;
+    h1 {
+      margin: 0;
+      padding: 20px 0 0 12px;
+    }
+  }
 }
 
 .boxed,
@@ -138,7 +152,7 @@ body {
   order: 1;
   flex: 0 1 774px;
   align-self: stretch;
-  padding-top: 75px;
+  padding-top: 20px;
   margin: 0 12px;
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);

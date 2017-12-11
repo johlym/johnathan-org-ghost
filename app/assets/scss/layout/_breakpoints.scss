@@ -8,6 +8,12 @@
   .left {
     display: none;
   }
+  .bar {
+    display: none;
+  }
+  .site-title {
+    display: none;
+  }
   .right {
     padding-top: 20px;
   }
@@ -46,6 +52,12 @@
   .mobile-header {
     flex-direction: column;
     height: auto;
+  }
+  article.post {
+    h1,
+    div.meta {
+      text-align: center;
+    }
   }
   .mobile-title {
     margin-top: 10px;
