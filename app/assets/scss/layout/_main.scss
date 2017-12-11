@@ -19,7 +19,7 @@ html {
 }
 
 a {
-  color: #DC493A;
+  color: #9E2A2B;
   text-decoration: none;
 }
 
@@ -36,6 +36,12 @@ body {
   display: none;
 }
 
+.hljs {
+  padding: 0 !important;
+  display: inline !important;
+  background: none !important;
+}
+
 .container {
   width: 100%;
   margin: 0 auto;
@@ -45,6 +51,7 @@ body {
   justify-content: center;
   align-content: center;
   align-items: flex-start;
+  border-top: 4px solid #9E2A2B;
 }
 
 .boxed,
@@ -153,11 +160,17 @@ body {
           margin-bottom: 10px;
         }
       }
-      time {
+      .meta {
+        color: #999;
         font-size: 0.9em;
+        .meta-child {
+          margin-right: 5px;
+        }
+        .meta-child:not(:first-child) {
+          margin-left: 5px;
+        }
       }
-      div.kg-card-markdown {
-
+      div {
         hr {
           margin: 20px auto;
           width: 100%;
@@ -177,6 +190,7 @@ body {
           }
         }
         p {
+          line-height: 1.7em;
           img {
             width: 100%;
             max-width: 750px;
@@ -202,7 +216,7 @@ body {
           p:before {
             font-family: "Font Awesome 5 Pro";
             content: "\f10d";
-            color: #333;
+            color: #9E2A2B;
             font-size: 16px;
             padding-top: 0px;
             padding-right: 5px;
@@ -212,7 +226,7 @@ body {
           p:after {
             font-family: "Font Awesome 5 Pro";
             content: "\f10e";
-            color: #333;
+            color: #9E2A2B;
             font-size: 16px;
             padding-top: 0px;
             padding-left: 5px;

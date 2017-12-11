@@ -13,6 +13,6 @@ gulp.task('copy', function () {
 
 gulp.task('copy:fonts', function () {
   return gulp
-    .src('app/assets/fonts/icons/**', {base: 'app/assets/fonts'})
+    .src('app/assets/fonts/**', {base: 'app/assets/fonts'})
     .pipe(gulp.dest('dist/assets/fonts'));
 });

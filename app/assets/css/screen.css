@@ -412,7 +412,7 @@ html {
   color: #444; }
 
 a {
-  color: #DC493A;
+  color: #9E2A2B;
   text-decoration: none; }
 
 a:hover {
@@ -425,6 +425,11 @@ body {
 .hidden {
   display: none; }
 
+.hljs {
+  padding: 0 !important;
+  display: inline !important;
+  background: none !important; }
+
 .container {
   width: 100%;
   margin: 0 auto;
@@ -433,7 +438,8 @@ body {
   flex-wrap: nowrap;
   justify-content: center;
   align-content: center;
-  align-items: flex-start; }
+  align-items: flex-start;
+  border-top: 4px solid #9E2A2B; }
 
 .boxed,
 .fluid {
@@ -517,74 +523,81 @@ body {
       width: 100%;
       max-width: 750px;
       margin-bottom: 10px; }
-    .right .right-wrapper article time {
+    .right .right-wrapper article .meta {
+      color: #999;
       font-size: 0.9em; }
-    .right .right-wrapper article div.kg-card-markdown hr {
+      .right .right-wrapper article .meta .meta-child {
+        margin-right: 5px; }
+      .right .right-wrapper article .meta .meta-child:not(:first-child) {
+        margin-left: 5px; }
+    .right .right-wrapper article div hr {
       margin: 20px auto;
       width: 100%;
       background-color: #eee;
       height: 1px;
       border: 0; }
-    .right .right-wrapper article div.kg-card-markdown pre {
+    .right .right-wrapper article div pre {
       background-color: #f5f5f5;
       padding: 1em;
       border: 1px solid #e0e0e0;
       border-radius: 2px;
       white-space: pre-wrap; }
-      .right .right-wrapper article div.kg-card-markdown pre code {
+      .right .right-wrapper article div pre code {
         color: #333;
         font-size: 0.95em; }
-    .right .right-wrapper article div.kg-card-markdown p img {
+    .right .right-wrapper article div p {
+      line-height: 1.7em; }
+      .right .right-wrapper article div p img {
+        width: 100%;
+        max-width: 750px; }
+      .right .right-wrapper article div p code {
+        background-color: #f5f5f5;
+        border: 1px solid #e0e0e0;
+        border-radius: 2px;
+        padding: 2px;
+        font-size: 0.95em; }
+    .right .right-wrapper article div iframe,
+    .right .right-wrapper article div video {
       width: 100%;
       max-width: 750px; }
-    .right .right-wrapper article div.kg-card-markdown p code {
-      background-color: #f5f5f5;
-      border: 1px solid #e0e0e0;
-      border-radius: 2px;
-      padding: 2px;
-      font-size: 0.95em; }
-    .right .right-wrapper article div.kg-card-markdown iframe,
-    .right .right-wrapper article div.kg-card-markdown video {
-      width: 100%;
-      max-width: 750px; }
-    .right .right-wrapper article div.kg-card-markdown blockquote {
+    .right .right-wrapper article div blockquote {
       margin: 0 0.5em;
       background-color: #fafafa;
       border: 1px solid #f5f5f5;
       padding: 0.5em 1em; }
-      .right .right-wrapper article div.kg-card-markdown blockquote p:before {
+      .right .right-wrapper article div blockquote p:before {
         font-family: "Font Awesome 5 Pro";
         content: "\f10d";
-        color: #333;
+        color: #9E2A2B;
         font-size: 16px;
         padding-top: 0px;
         padding-right: 5px;
         margin: 0em;
         font-style: normal; }
-      .right .right-wrapper article div.kg-card-markdown blockquote p:after {
+      .right .right-wrapper article div blockquote p:after {
         font-family: "Font Awesome 5 Pro";
         content: "\f10e";
-        color: #333;
+        color: #9E2A2B;
         font-size: 16px;
         padding-top: 0px;
         padding-left: 5px;
         margin: 0em;
         font-style: normal; }
-      .right .right-wrapper article div.kg-card-markdown blockquote p {
+      .right .right-wrapper article div blockquote p {
         font-style: italic; }
-    .right .right-wrapper article div.kg-card-markdown ol, .right .right-wrapper article div.kg-card-markdown ul {
+    .right .right-wrapper article div ol, .right .right-wrapper article div ul {
       padding-left: 1.3em; }
-      .right .right-wrapper article div.kg-card-markdown ol li, .right .right-wrapper article div.kg-card-markdown ul li {
+      .right .right-wrapper article div ol li, .right .right-wrapper article div ul li {
         margin-bottom: 0.25em; }
-        .right .right-wrapper article div.kg-card-markdown ol li code, .right .right-wrapper article div.kg-card-markdown ul li code {
+        .right .right-wrapper article div ol li code, .right .right-wrapper article div ul li code {
           background-color: #f5f5f5;
           border: 1px solid #e0e0e0;
           border-radius: 2px;
           padding: 2px;
           font-size: 0.95em; }
-    .right .right-wrapper article div.kg-card-markdown section.footnotes ol.footnotes-list {
+    .right .right-wrapper article div section.footnotes ol.footnotes-list {
       padding-left: 1.3em; }
-      .right .right-wrapper article div.kg-card-markdown section.footnotes ol.footnotes-list li p {
+      .right .right-wrapper article div section.footnotes ol.footnotes-list li p {
         margin: 0;
         line-height: 1.4; }
     .right .right-wrapper hr {

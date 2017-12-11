@@ -14,6 +14,10 @@
   <link rel="stylesheet" href="{{asset "css/fa-brands.min.css"}}" />
   <link rel="stylesheet" href="{{asset "css/fa-regular.min.css"}}" />
 
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
   {{ghost_head}}
 </head>  
 <body class="{{body_class}}">
@@ -28,8 +32,8 @@
       <div class="title-box left-flex-child">
         <h1>{{@blog.title}}</h1>
         <span class="intro">
-          I am an engineer at <a href="//papertrail.com">Papertrail</a>, 
-          a huge Apple nerd and aemi-regular blogger.
+          My name is <a href="/about" class="h-card" rel="me">Johnathan Lyman</a> and <span class="p-note">I am an engineer at <a href="//papertrail.com">Papertrail</a>, 
+          a huge Apple nerd and semi-regular blogger.</span>
           <a href="/about">Find out more</a>.
         </span>
       </div>
@@ -74,6 +78,21 @@
   </div>
 
   {{ghost_foot}}
+
+  <div style="display: none"><address id="hcard-Johnathan-Lyman" class="vcard">
+  <img style="float:left; margin-right:15px; margin-bottom:35px;" src="https://www.gravatar.com/avatar/00000000000000000000000000000000?s=256" alt="photo of " class="photo img-circle" height="128px" width="128px"/>
+ <a class="url lead fn" href="https://johnathan.org">Johnathan Lyman</a>
+ <div class="adr">
+  <span class="locality"><small>Kenmore</small></span>,
+
+  <span class="region"><small>WA</small></span>,
+
+  <div class="country-name"><small>United States</small></div>
+
+ </div>
+ <a class="email" href="mailto:email@johnathan.org"><i class="fa fa-fw fa-envelope-o"></i>&nbsp;email@johnathan.org</a>&nbsp;
+<div><span class="category">blogging</span>, <span class="category">design</span>, <span class="category">technology</span>, <span class="category">software</span>, <span class="category">development</span>, <span class="category">gaming</span>, <span class="category">photography</span></div>
+</address></div>
 
   <script>
     var paginationLines = [
