@@ -541,6 +541,33 @@ body {
         margin-right: 5px; }
       .right .right-wrapper article .meta .meta-child:not(:first-child) {
         margin-left: 5px; }
+    .right .right-wrapper article div table {
+      border-spacing: 0px;
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 15px;
+      background-color: transparent;
+      text-align: left;
+      border-left: 1px solid #eee;
+      border-right: 1px solid #eee; }
+    .right .right-wrapper article div th {
+      font-weight: bold;
+      border: 1px solid #eee;
+      padding: 8px; }
+    .right .right-wrapper article div td {
+      border: 1px solid #eee;
+      padding: 8px; }
+    .right .right-wrapper article div tr {
+      background-color: transparent;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee; }
+      .right .right-wrapper article div tr:nth-of-type(2n+1) {
+        background-color: #fafafa; }
+      .right .right-wrapper article div tr th {
+        background-color: #f0f0f0; }
+    .right .right-wrapper article div th, .right .right-wrapper article div td {
+      border: none; }
     .right .right-wrapper article div hr {
       margin: 20px auto;
       width: 100%;
@@ -599,7 +626,8 @@ body {
     .right .right-wrapper article div ol, .right .right-wrapper article div ul {
       padding-left: 1.3em; }
       .right .right-wrapper article div ol li, .right .right-wrapper article div ul li {
-        margin-bottom: 0.25em; }
+        margin-bottom: 0.25em;
+        line-height: 1.7em; }
         .right .right-wrapper article div ol li code, .right .right-wrapper article div ul li code {
           background-color: #f5f5f5;
           border: 1px solid #e0e0e0;
