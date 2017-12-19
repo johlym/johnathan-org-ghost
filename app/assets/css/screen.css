@@ -513,6 +513,14 @@ body {
     .left .widget .meta-pills {
       list-style: none;
       padding-left: 0em; }
+    .left .widget .pb-link {
+      color: #333; }
+      .left .widget .pb-link .pb-small {
+        width: 14px;
+        height: 14px;
+        position: relative;
+        filter: grayscale(100%);
+        top: 1px; }
 
 .right {
   order: 1;
