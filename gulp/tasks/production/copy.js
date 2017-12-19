@@ -6,7 +6,8 @@ gulp.task('copy', function () {
       'app/*.txt',
       'app/browserconfig.xml',
       'app/assets/css/**/*',
-      'app/assets/js/*'], 
+      'app/assets/js/*',
+      'app/assets/svg/*'], 
       {base: './app'})
     .pipe(gulp.dest('dist'));
 });
