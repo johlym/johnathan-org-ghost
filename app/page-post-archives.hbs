@@ -1,0 +1,19 @@
+{{!< default}}
+<h1 class="p-name page-title" itemprop="headline">Archives</h1>
+{{#get "posts" limit="all"}}
+{{#foreach posts}}
+{{^has tag="micro"}}
+
+<article class="h-entry {{post_class}} h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="slim-entry">
+  <div class="slim-entry-date">
+    {{date published_at format="MMM DD, YYYY"}}
+  </div>
+  <div class="slim-entry-title">
+    <a href="{{url}}">{{title}}</a>
+  </div>
+</div>
+</article>
+{{/has}}
+{{/foreach}}
+{{/get}}
