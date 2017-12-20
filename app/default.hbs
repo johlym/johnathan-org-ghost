@@ -7,9 +7,6 @@
   <meta name="viewport" content="initial-scale=1, viewport-fit=cover">
 
   <link rel="stylesheet" href="{{asset "css/screen.css"}}" /> 
-
-  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700,700i" rel="stylesheet">
-
   <link rel="stylesheet" href="{{asset "css/fontawesome.min.css"}}" />
   <link rel="stylesheet" href="{{asset "css/fa-brands.min.css"}}" />
   <link rel="stylesheet" href="{{asset "css/fa-regular.min.css"}}" />
@@ -48,32 +45,31 @@
         {{{navigation}}}
       </div>
       <div class="widget left-flex-child">
-        <h3>Side Projects</h3>
-        Check out my <a href="//micro.johnathan.org">micro blog</a> for a look at some of the half-formed thoughts that spill out.
+        <h3>Latest Blog Posts</h3>
+        <div class="navigation">
+        {{#get "posts" limit="5"}}
+        {{#foreach posts}}
+        <div class="link link-{{slug}}"><a href="{{url absolute="true"}}">{{title}}</a><br /><small>{{date published_at timeago="true"}}</small><br /><br /></div>
+        {{/foreach}}
+        {{/get}}
+        </div>
       </div>
       <div class="widget left-flex-child">
-        You can find <a href="/project-archives">some of my past projects</a> or <a href="/content-archives">the post archives</a>.
-        <br /><br />
-        The development of this blog layout is (loosely) tracked <a href="https://github.com/johlym/johnathan-org">here</a>.
+        <i class="far fa-copyright"></i> 2014&mdash;{{date format="YYYY"}} Johnathan Lyman. Made with <i class="far fa-heart"></i> and <i class="far fa-coffee"></i> in Seattle.
       </div>
       <div class="widget left-flex-child">
-        <h3>Meta &amp; Copyright</h3>
-        <a href="//johnathan.org">johnathan.org</a> and its content are <i class="far fa-copyright"></i> 2014&mdash;{{date format="YYYY"}}. All rights reserved. Trademarks are property of their respective owners.
-      </div>
-      <div class="widget left-flex-child">
-        <h3>Powered by:</h3>
-        <ul class="meta-pills">
-        </ul>
         <a class="pb-link" href="https://link.johnathan.org/linode"><i class="fab fa-linode"></i></a>
         <a class="pb-link" href="https://link.johnathan.org/ghostblog"><img class="pb-small" src="{{ asset "svg/ghost.org.svg"}}"/></a>
         <a class="pb-link" href="https://link.johnathan.org/letsencrypt"><i class="far fa-lock"></i></a>
         <a class="pb-link" href="https://link.johnathan.org/dnsimple"><img class="pb-small" src="{{ asset "svg/dnsimple.com.svg"}}"/></a>
-        <i class="fab fa-html5"></i>
-        <i class="fab fa-css3"></i>
-        <i class="fab fa-apple"></i>
+        <a href="https:////fontawesome.com" class="pb-link"><i class="fab fa-font-awesome-flag"></i></a>
+        <a href="/rss/" class="pb-link"><i class="far fa-rss"></i></a>
+        <a href="https:////github.com/johlym" rel="me" class="pb-link"><i class="fab fa-github"></i></a>
+        <a href="https://twitter.com/_johlym" rel="me" class="pb-link"><i class="fab fa-twitter"></i></a>
+        <a href="/archives" class="pb-link"><i class="far fa-archive"></i></a>
       </div>
       <div class="widget left-flex-child">
-        Uptime: <span class="uptime-number"><i class="far fa-spinner fa-pulse"></i></span> (<a href="//status.johnathan.org">see stats</a>)</a>
+        <i class="far fa-tachometer-alt"></i> Uptime: <span class="uptime-number"><i class="far fa-spinner fa-pulse"></i></span> <a href="//status.johnathan.org"><i class="far fa-external-link"></i></a>
       </div>
       <div class="widget left-flex-child">
         <span id="sidebar-quote"></span>
@@ -116,7 +112,7 @@
     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
-
+  {{^post}}
   <script>
     var paginationLines = [
     'The end may have come for this page, but the next one is sure to delight!',
@@ -137,21 +133,33 @@
 
     document.getElementById('hey-look').innerHTML = paginationLines[randomPaginationLines];
     document.getElementById('sidebar-quote').innerHTML = sidebarQuotes[randomPaginationLines];
-
+  </script>
+  {{/post}}
+  <script>
     var uptimeField = document.querySelector(".uptime-number"),
     checkAndDisplayUptime = function() {
-      var e = new XMLHttpRequest;
-      e.open("get", "https://updown.io/api/checks?api-key=ro-aNa87VGVKAjK8d9qa8Dk", !0), e.responseType = "json", e.onload = function() {
-        if (200 === e.status) {
-          var a = e.response;
-          if (null !== a[0].uptime) {
-            uptimeField.innerHTML = a[0].uptime + "%"
+      var e1 = new XMLHttpRequest;
+      e1.open("get", "https://updown.io/api/checks?api-key=ro-aNa87VGVKAjK8d9qa8Dk", !0), e1.responseType = "json", e1.onload = function() {
+        if (200 === e1.status) {
+          var a1 = e1.response;
+          if (null !== a1[0].uptime) {
+            uptimeField.innerHTML = a1[0].uptime + "%"
           }
           else {
             uptimeField.innerHTML = "unknown %";
           }
         }
-      }, e.send()
+      }, e1.send()
+    };
+
+    var microBlogFeedElement = document.querySelector(".micro-feed"),
+    checkAndDisplayMicroBlog = function () {
+      var e2 = new XMLHttpRequest;
+      e2.open("get", "https://johlym.micro.blog/feed.json", !0), e2.responseType = "json", e2.onload = function () {
+        if (200 === e2.status) {
+          var a2 = e2.response;
+        }
+      }, e2.send()
     };
 null !== uptimeField && setTimeout(function() {
   checkAndDisplayUptime()
