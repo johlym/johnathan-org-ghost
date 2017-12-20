@@ -521,6 +521,8 @@ body {
         position: relative;
         filter: grayscale(100%);
         top: 1px; }
+    .left .widget .micro-feed p {
+      margin-top: 0; }
 
 .right {
   order: 1;

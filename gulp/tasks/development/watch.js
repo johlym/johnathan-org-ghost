@@ -8,6 +8,7 @@ gulp.task('ghost', function (callback) {
     function () {
       gulp.watch('app/**/*.hbs', ['browsersync:reload']);
       gulp.watch('app/assets/scss/**/*.scss', ['sass', 'browsersync:reload']);
+      gulp.watch('app/assets/js/**/*.js', ['js', 'browsersync:reload']);
 
       return callback;
     }

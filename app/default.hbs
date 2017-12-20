@@ -11,12 +11,12 @@
   <link rel="stylesheet" href="{{asset "css/fa-brands.min.css"}}" />
   <link rel="stylesheet" href="{{asset "css/fa-regular.min.css"}}" />
 
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
-  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/highlightjs/styles/default.css" />
+  <!-- endbower -->
 
   {{ghost_head}}
+
 </head>  
 <body class="{{body_class}}">
   <div class="mobile-header">
@@ -43,6 +43,12 @@
       <div class="widget left-flex-child column-menu">
         <h3>Links</h3>
         {{{navigation}}}
+      </div>
+      <div class="widget left-flex-child">
+        <h3>Micro Blog Feed <a href="https://micro.johnathan.org"><i class="far fa-external-link"></i></a></h3>
+        <div class="micro-feed">
+          <i class="far fa-spinner fa-pulse"></i>
+        </div>
       </div>
       <div class="widget left-flex-child">
         <h3>Latest Blog Posts</h3>
@@ -112,58 +118,19 @@
     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
-  {{^post}}
-  <script>
-    var paginationLines = [
-    'The end may have come for this page, but the next one is sure to delight!',
-    'What are your thoughts on the next page?',
-    'If you thought those posts were great, try these!',
-    'The next page is where the wild things are... and the next set of posts.'
-    ];
-    var sidebarQuotes = [
-    "It's everything your mother warned you about.",
-    "Brought to you by a sneeze and a fart.",
-    "Powered by the souls of undocumented codes.",
-    "Make the independent web great again.",
-    "No Ragrets.",
-    "These violent delights have violent ends and in their triumph die."
-    ];
-    var randomPaginationLines = Math.floor(Math.random()*paginationLines.length);
-    var randomPaginationLines = Math.floor(Math.random()*sidebarQuotes.length);
 
-    document.getElementById('hey-look').innerHTML = paginationLines[randomPaginationLines];
-    document.getElementById('sidebar-quote').innerHTML = sidebarQuotes[randomPaginationLines];
-  </script>
-  {{/post}}
-  <script>
-    var uptimeField = document.querySelector(".uptime-number"),
-    checkAndDisplayUptime = function() {
-      var e1 = new XMLHttpRequest;
-      e1.open("get", "https://updown.io/api/checks?api-key=ro-aNa87VGVKAjK8d9qa8Dk", !0), e1.responseType = "json", e1.onload = function() {
-        if (200 === e1.status) {
-          var a1 = e1.response;
-          if (null !== a1[0].uptime) {
-            uptimeField.innerHTML = a1[0].uptime + "%"
-          }
-          else {
-            uptimeField.innerHTML = "unknown %";
-          }
-        }
-      }, e1.send()
-    };
+<!-- bower:js -->
+<script src="/bower_components/moment/moment.js"></script>
+<script src="/bower_components/highlightjs/highlight.pack.js"></script>
+<!-- endbower -->
 
-    var microBlogFeedElement = document.querySelector(".micro-feed"),
-    checkAndDisplayMicroBlog = function () {
-      var e2 = new XMLHttpRequest;
-      e2.open("get", "https://johlym.micro.blog/feed.json", !0), e2.responseType = "json", e2.onload = function () {
-        if (200 === e2.status) {
-          var a2 = e2.response;
-        }
-      }, e2.send()
-    };
-null !== uptimeField && setTimeout(function() {
-  checkAndDisplayUptime()
-}, 5e3);
-  </script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+{{^post}}
+<script src="{{ asset "js/quotes.js"}}"></script>
+{{/post}}
+<script async src="{{ asset "js/uptime.js"}}"></script>
+<script async src="{{ asset "js/feed.js"}}">
+</script>
 </body>  
 </html>  

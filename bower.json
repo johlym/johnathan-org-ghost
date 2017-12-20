@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "My Scary Ghost theme",
   "dependencies": {
-    "normalize-scss": "~3.0.3"
+    "normalize-scss": "~3.0.3",
+    "moment": "^2.20.1",
+    "highlightjs": "^9.12.0"
   }
 }

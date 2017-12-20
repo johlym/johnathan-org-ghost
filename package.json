@@ -2,10 +2,15 @@
   "name": "johnathan-org-theme",
   "description": "A ghost theme for johnathan.org",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johlym/johnathan-org.git"
+  },
+  "license": "MIT",
   "author": {
     "name": "Johnathan Lyman",
-    "email": "jelyman@gmail.com",
-    "url": "https://john.ly"
+    "email": "email@johnathan.org",
+    "url": "https://johnathan.org"
   },
   "config": {
     "posts_per_page": 5
@@ -20,6 +25,7 @@
     "ghost": "^1.0.0",
     "gulp": "^3.9.0",
     "gulp-cdnizer": "^1.1.7",
+    "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.2",
     "gulp-env": "^0.4.0",
     "gulp-gzip": "^1.4.0",
@@ -34,7 +40,7 @@
     "gulp-size": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-sym": "0.0.14",
-    "gulp-uglify": "^2.0.0",
+    "gulp-uglify": "^2.1.2",
     "gulp-useref": "^3.1.0",
     "gulp-webp": "^2.3.0",
     "gulp-zip": "^4.0.0",
