@@ -34,21 +34,18 @@
   <div class="container">
     <div class="left"> 
       <div class="title-box left-flex-child">
-        <span class="intro">
+        <div class="intro">
+          <div class="intro-image">
+            <img src="{{ asset "images/headshot.jpg" }}" alt="Johnathan Lyman" class="photo" />
+          </div>
           My name is <a href="/about" class="h-card" rel="me">Johnathan Lyman</a> and <span class="p-note">I am an engineer at <a href="//papertrail.com">Papertrail</a>, 
           a huge Apple nerd and semi-regular blogger.</span>
           <a href="/about">Find out more</a>.
-        </span>
+        </div>
       </div>
       <div class="widget left-flex-child column-menu">
         <h3>Links</h3>
         {{{navigation}}}
-      </div>
-      <div class="widget left-flex-child">
-        <h3>Micro Blog Feed <a href="https://micro.johnathan.org"><i class="far fa-external-link"></i></a></h3>
-        <div class="micro-feed">
-          Loading<span class="el-an"><span>.</span><span>.</span><span>.</span></span>
-        </div>
       </div>
       <div class="widget left-flex-child">
         <h3>Latest Blog Posts</h3>
@@ -77,9 +74,6 @@
       <div class="widget left-flex-child">
         <i class="far fa-tachometer-alt"></i> Uptime: <span class="uptime-number"><i class="far fa-spinner fa-pulse"></i></span> <a href="//status.johnathan.org"><i class="far fa-external-link"></i></a>
       </div>
-      <div class="widget left-flex-child">
-        <span id="sidebar-quote"></span>
-      </div>
     </div>
     <div class="right">
       <div class="right-wrapper">
@@ -91,7 +85,6 @@
   {{ghost_foot}}
 
   <div style="display: none"><address id="hcard-Johnathan-Lyman" class="vcard">
-  <img style="float:left; margin-right:15px; margin-bottom:35px;" src="https://www.gravatar.com/avatar/00000000000000000000000000000000?s=256" alt="photo of " class="photo img-circle" height="128px" width="128px"/>
  <a class="url lead fn" href="https://johnathan.org">Johnathan Lyman</a>
  <div class="adr">
   <span class="locality"><small>Kenmore</small></span>,
@@ -130,6 +123,5 @@
 <script async src="{{ asset "js/quotes.js"}}"></script>
 {{/post}}
 <script async src="{{ asset "js/uptime.js"}}"></script>
-<script async src="{{ asset "js/feed.js"}}"></script>
 </body>  
 </html>  
