@@ -153,8 +153,11 @@ body {
       }
     }
     .micro-feed {
-      p {
-        margin-top: 0;
+      .micro-feed-object {
+        margin-bottom: 1em;
+        p {
+          margin: 0;
+        }
       }
     }
   }

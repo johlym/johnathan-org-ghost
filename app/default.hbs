@@ -47,7 +47,7 @@
       <div class="widget left-flex-child">
         <h3>Micro Blog Feed <a href="https://micro.johnathan.org"><i class="far fa-external-link"></i></a></h3>
         <div class="micro-feed">
-          <i class="far fa-spinner fa-pulse"></i>
+          Loading<span class="el-an"><span>.</span><span>.</span><span>.</span></span>
         </div>
       </div>
       <div class="widget left-flex-child">
@@ -127,10 +127,9 @@
 <script>hljs.initHighlightingOnLoad();</script>
 
 {{^post}}
-<script src="{{ asset "js/quotes.js"}}"></script>
+<script async src="{{ asset "js/quotes.js"}}"></script>
 {{/post}}
 <script async src="{{ asset "js/uptime.js"}}"></script>
-<script async src="{{ asset "js/feed.js"}}">
-</script>
+<script async src="{{ asset "js/feed.js"}}"></script>
 </body>  
 </html>  
